@@ -9,14 +9,14 @@ package br.com.mariani.modelos;
  *
  * @author maryucha
  */
-public enum Cargo {
+public enum EnumCargo {
     
     GERENTE("gerente"),
     VENDEDOR("vendedor");
     
     private String descricao;
     
-    Cargo(String descricao){
+    EnumCargo(String descricao){
         this.descricao=descricao;
     }
     

@@ -1,8 +1,6 @@
 package br.com.mariani.controle;
 
 import br.com.mariani.modelos.Funcionario;
-import br.com.mariani.modelos.Gerencia;
-import br.com.mariani.modelos.Loja;
 import br.com.mariani.modelos.Pessoa;
 import java.awt.HeadlessException;
 import java.util.ArrayList;
@@ -13,11 +11,11 @@ import java.util.Scanner;
  *
  * @author maryucha
  */
-public class PrincipalPessoa {
+public class PrincipalMain {
     public static void main(String[] args) {
         Scanner entrada =new Scanner(System.in);
-        Gerencia chamar = new Gerencia();
-        Loja lj = new Loja();
+        ControleFuncionarios chamar = new ControleFuncionarios();
+        ControleLoja lj = new ControleLoja();
         
         
         Integer menu=0;

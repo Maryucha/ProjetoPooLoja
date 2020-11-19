@@ -1,5 +1,9 @@
-package br.com.mariani.modelos;
+package br.com.mariani.controle;
 
+import br.com.mariani.controle.ControleFuncionarios;
+import br.com.mariani.modelos.Cliente;
+import br.com.mariani.modelos.Compra;
+import br.com.mariani.modelos.Vendedor;
 import java.awt.HeadlessException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -11,7 +15,7 @@ import java.util.Scanner;
  *
  * @author maryucha
  */
-public class Loja {
+public class ControleLoja {
 
     private List<Vendedor> listaVendedor = new ArrayList<>();
     private List<Cliente> listaCliente = new ArrayList<>();
@@ -20,7 +24,7 @@ public class Loja {
     Vendedor ven = new Vendedor();
     Cliente cli = new Cliente();
     Compra compra = new Compra();
-    Gerencia chamar = new Gerencia();
+    ControleFuncionarios chamar = new ControleFuncionarios();
 
     private final Scanner entrada = new Scanner(System.in);
     private final Calendar cal = Calendar.getInstance();
@@ -59,7 +63,7 @@ public class Loja {
         } else {
             for (int i = 0; i < listaCliente.size(); i++) {
                 listaCliente.listIterator(i).next().imprime();
-                listaCliente.listIterator(i).next().getListaCompras().listIterator(i).next().imprimeCompra();
+                //listaCliente.listIterator(i).next().getListaCompras().listIterator(i).next().imprimeCompra();
             }
         }
     }
@@ -105,6 +109,7 @@ public class Loja {
         for (int i = 0; i < listaCliente.size(); i++) {
             if (nomeCliente.equalsIgnoreCase(listaCliente.get(i).getNome())) {
                // valor = listaCliente.get(i).calcDividaCliente();
+                System.out.println(listaCliente.get(i).getVlrDivida());
                 valor = listaCliente.get(i).calcDividaCliente();
                 formatado=dF.format(valor);
                 System.out.println("CLIENTE ["+listaCliente.get(i).getNome()+"] DIVIDA ["+listaCliente.get(i).calcDividaCliente()+"]");

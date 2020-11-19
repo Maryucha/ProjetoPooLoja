@@ -1,5 +1,7 @@
-package br.com.mariani.modelos;
+package br.com.mariani.controle;
 
+import br.com.mariani.modelos.Gerente;
+import br.com.mariani.modelos.Vendedor;
 import java.awt.HeadlessException;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +11,7 @@ import java.util.Scanner;
  *
  * @author maryucha
  */
-public class Gerencia {
+public class ControleFuncionarios {
 
     private final List<Gerente> listaGerente = new ArrayList<>();
     private final List<Vendedor> listaVendedor = new ArrayList<>();

@@ -18,7 +18,7 @@ public class Compra {
     private double valorProduto = 0;
     private int qtdProduto = 0;
     private String nomeProduto = "";
-    
+
     private int totProdutos = 0;
     private double vlrtotCompra = 0;
 
@@ -26,7 +26,6 @@ public class Compra {
 
     public Compra() {
     }
-  
 
     public double getValorProduto() {
         return valorProduto;
@@ -66,28 +65,26 @@ public class Compra {
 
     public void setVlrtotCompra(double vlrtotCompra) {
         this.vlrtotCompra = vlrtotCompra;
-    } 
-    
+    }
+
     public void imprimeCompra() {
         System.out.println("--------------COMPROU-----------");
         System.out.println("PRODUTO [" + this.nomeProduto + "] VALOR [" + this.valorProduto + "] QUANTIDADE [" + this.qtdProduto + "]");
         System.out.println("==================================");
     }
-       
-  
+
     public Compra carregarCompra() {
-        int num=0;
-       Compra listaCompras = new Compra();
+        Compra compra = new Compra();
         System.out.print("Digite o nome do produto: ");
-        listaCompras.setNomeProduto( entrada.nextLine());
+        compra.setNomeProduto(entrada.nextLine());
         System.out.print("Digite a quantidade: ");
-        listaCompras.setQtdProduto(entrada.nextInt());
+        compra.setQtdProduto(entrada.nextInt());
         entrada.nextLine();
         System.out.print("Digite o valor do produto: ");
-        listaCompras.setValorProduto(entrada.nextDouble());
+        compra.setValorProduto(entrada.nextDouble());
         entrada.nextLine();
-        setTotProdutos(qtdProduto);
-        return listaCompras;
+        compra.setTotProdutos(qtdProduto);
+        return compra;
     }
 
 }

@@ -43,7 +43,7 @@ public class Cliente extends Pessoa {
     }
 
     public double getVlrDivida() {
-        return vlrDivida;
+        return this.vlrDivida;
     }
 
     public void setVlrDivida(double vlrDivida) {
@@ -73,11 +73,12 @@ public class Cliente extends Pessoa {
         entrada.nextLine();
     }
 
-      public double calcDividaCliente() {
+    public double calcDividaCliente() {
         double valor = 0;
-        
-        for (int i = 0; i < listaCompras.size(); i++) {
-                valor = getVlrDivida();       
+
+        for (int i = 0; i < this.listaCompras.size(); i++) {
+            System.out.println(this.listaCompras.get(i).getNomeProduto());
+            valor += getVlrDivida();
         }
         return valor;
     }
@@ -87,19 +88,20 @@ public class Cliente extends Pessoa {
         int qtdProdutos = 0;
         double vlrtotCompra = 0;
         double custoProduto = 0;
-        String nomeProduto="";
-        
+        String nomeProduto = "";
+
         int teste = 0;
         System.out.println("===================CAIXA===================");
         do {
             listaCompras.add(com.carregarCompra());
+
             for (int i = 0; i < listaCompras.size(); i++) {
-                
+
                 //mudando o total de produtos
                 listaCompras.get(i).setTotProdutos(totProdutos++);
                 //mostrar a quantidade de produtos
-                System.out.println("a qtd de produtos é "+listaCompras.get(i).getTotProdutos());
-                
+                System.out.println("a qtd de produtos é " + listaCompras.get(i).getTotProdutos());
+
                 //pegando o valor
                 qtdProdutos = listaCompras.get(i).getQtdProduto();
                 custoProduto = listaCompras.get(i).getValorProduto();
@@ -108,12 +110,12 @@ public class Cliente extends Pessoa {
                 //imprimindo
                 listaCompras.get(i).imprimeCompra();
                 listaCompras.get(i).setVlrtotCompra(vlrtotCompra);
-                
+
                 //mostrando a divida
                 setVlrDivida(vlrtotCompra);
-                System.out.println("Sua divida está em R$"+getVlrDivida());
+                System.out.println("Sua divida está em R$" + getVlrDivida());
             }
-            
+
             formatado = dF.format(vlrtotCompra);
             System.out.println("Deseja continuar comprando [S=0/N=1]");
             teste = entrada.nextInt();

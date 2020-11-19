@@ -18,7 +18,7 @@ public class Gerente extends Funcionario {
     private DecimalFormat dF = new DecimalFormat("0.##");
     private String formatado = "";
 
-    public Gerente(String nomeGrencia, String matricula, Cargo cargo, String nome, int idade, char sexo) {
+    public Gerente(String nomeGrencia, String matricula, EnumCargo cargo, String nome, int idade, char sexo) {
         super(matricula, cargo, nome, idade, sexo);
         this.nomeGrencia = nomeGrencia;
     }

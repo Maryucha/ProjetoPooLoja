@@ -18,7 +18,7 @@ public class Vendedor extends Funcionario {
     private List<Cliente> listaCliente = new ArrayList<>();
 
 
-    public Vendedor(double vlrVendas, int qtdVendas, String matricula, Cargo cargo, String nome, int idade, char sexo) {
+    public Vendedor(double vlrVendas, int qtdVendas, String matricula, EnumCargo cargo, String nome, int idade, char sexo) {
         super(matricula, cargo, nome, idade, sexo);
         this.vlrVendas = vlrVendas;
         this.qtdVendas = qtdVendas;

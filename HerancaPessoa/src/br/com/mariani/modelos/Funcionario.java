@@ -9,10 +9,10 @@ import java.util.Scanner;
  *
  * @author maryucha
  */
-public class Funcionario extends Pessoa{
+public abstract class Funcionario extends Pessoa{
     private String matricula;
     private double salario;
-    private Cargo cargo;
+    private EnumCargo cargo;
 
     private Scanner entrada =new Scanner(System.in);
     private Calendar cal = Calendar.getInstance();
@@ -20,13 +20,13 @@ public class Funcionario extends Pessoa{
     private String formatado = "";
     
 
-    public Funcionario(String matricula, Cargo cargo, String nome, int idade, char sexo) {
+    public Funcionario(String matricula, EnumCargo cargo, String nome, int idade, char sexo) {
         super(nome, idade, sexo);
         this.matricula = matricula;
         this.cargo = cargo;
     }
 
-    public Funcionario(String matricula, Cargo cargo) {
+    public Funcionario(String matricula, EnumCargo cargo) {
         this.matricula = matricula;
         this.cargo = cargo;
     }
@@ -51,11 +51,11 @@ public class Funcionario extends Pessoa{
         this.salario = salario;
     }  
 
-    public Cargo getCargo() {
+    public EnumCargo getCargo() {
         return cargo;
     }
 
-    public void setCargo(Cargo cargo) {
+    public void setCargo(EnumCargo cargo) {
         this.cargo = cargo;
     }
     

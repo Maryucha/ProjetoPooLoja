@@ -37,10 +37,6 @@ public class ControleLoja {
         listaCliente.add(cli.criaCli());
     }
 
-    public void validarVendedor() {
-
-    }
-
     public void vender() {
         System.out.println("------------BUSCANDO O CLIENTE---------");
         System.out.print("Digite o nome do Cliente: ");
@@ -162,7 +158,7 @@ public class ControleLoja {
                         System.out.println("Voltando ao menu principal!");
                         break;
                     case 7:
-                        validarVendedor();
+                        //validarVendedor();
                         break;
                     case 8:
                         mostrarListadeCompras();
